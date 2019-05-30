@@ -1,5 +1,5 @@
 <template>
-  <div class="RecordListDiv" :class="(records.length === 0)?'close':''">
+  <div class="RecordListDiv" :class="(showRecords)?'':'close'">
     <Record
       v-for="record in records"
       v-on:click="emitClick"
@@ -23,7 +23,8 @@ export default {
     }
   },
   props: {
-    records: Array
+    records: Array,
+    showRecords: boolean
   }
 };
 </script>
@@ -40,7 +41,7 @@ export default {
   transition-duration: 250ms;
 }
 .RecordListDiv.close {
-  height: 0px
+  height: 0px;
 }
 .RecordListDiv::-webkit-scrollbar {
   height: 20px;
