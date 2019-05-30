@@ -1,5 +1,5 @@
 <template>
-    <div class="RecordListDiv">
+    <div class="RecordListDiv" :class="(records.length === 0)?'close':''">
         <Record v-for="record in records" v-on:click="emitClick" v-bind:record="record" :key="record.src"/>
     </div>
 </template>
@@ -25,6 +25,7 @@ export default {
 
 <style>
     .RecordListDiv{
+        transition-duration: 250ms;
         width: 100%;
         overflow-x: auto;
         overflow-y: hidden;
@@ -32,6 +33,9 @@ export default {
         justify-content: flex-start;
         align-items: flex-start;
         flex-direction: row;
+    }
+    .RecordListDiv.close {
+        height: 0px
     }
     .RecordListDiv::-webkit-scrollbar
     {
