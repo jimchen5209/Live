@@ -96,12 +96,11 @@ export default {
         this.data.recordPlayer.subtitle = eventData.publishTimeText;
         window.scrollTo(0, 0);
       } else if (type === "streamer") {
-        eventData.streamer.showRecords = !eventData.streamer.showRecords
-        // if (eventData.streamer.records.length == 0) {
-        //   eventData.streamer.records = eventData.streamer.unloadRecords;
-        // } else {
-        //   eventData.streamer.records = [];
-        // }
+        if (eventData.streamer.records.length == 0) {
+          eventData.streamer.records = eventData.streamer.unloadRecords;
+        } else {
+          eventData.streamer.records = [];
+        }
       } else if (type === "streamerLive") {
         this.data.nowPlayer = "live";
         this.data.livePlayer.title = eventData.streamer.name;

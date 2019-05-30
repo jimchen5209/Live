@@ -3,7 +3,7 @@
     <Divider/>
     <div class="StreamerTitle">
       <h2 class="StreamerName" @click="emitClick('streamer',{})">
-        <div class="triangle" :class="(streamer.showRecords)?'rotate':''">►</div>
+        <div class="triangle" :class="(streamer.records.length === 0)?'':'rotate'">►</div>
         &nbsp; {{streamer.name}}
       </h2>
       <!-- <h2 class="StreamerName" v-if="streamer.records.length === 0" @click="emitClick('streamer',{})">{{streamer.name}} &nbsp; ►</h2>
