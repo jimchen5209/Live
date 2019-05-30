@@ -24,7 +24,7 @@ export default {
   },
   props: {
     records: Array,
-    showRecords: boolean
+    showRecords: Boolean
   }
 };
 </script>
